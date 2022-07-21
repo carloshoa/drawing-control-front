@@ -1,0 +1,19 @@
+.template-public-container {
+  display: flex;
+}
+
+.template-public-background {
+  width: 75%;
+  max-width: 1080px;
+  height: 100vh;
+  background-image: url('../../../images/tbtengenharia-logo.png');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.template-public-content {
+  flex: 1;
+  padding: 50px;
+  background-color: rgb(243, 240, 240);
+}
