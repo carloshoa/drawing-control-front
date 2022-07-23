@@ -4,8 +4,8 @@ const api = axios.create({
   baseURL: 'http://localhost:5000/api',
 });
 
-export const login = async (email, password) => {
-  const response = await api.post('/auth/login', { email, password });
+export const login = async (formData) => {
+  const response = await api.post('/auth/login', formData);
 
   return response.data;
 };
