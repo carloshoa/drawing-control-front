@@ -1,0 +1,26 @@
+.template-private-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  height: 150px;
+  background-color: rgba(238, 20, 20, 0.897);
+}
+
+.template-priivate-navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.template-private-iron-projects-logo{
+  font-size: 32px !important;
+}
+
+.template-private-nav-link a + a {
+  margin-left: 50px;
+}
+
+.template-private-content {
+  padding: 80px 100px;
+}

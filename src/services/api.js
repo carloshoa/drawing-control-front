@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: process.env.REACT_APP_BASE_URL,
 });
+
+const setHeaders = (token) => ({ headers: { Authorization: `Bearer ${token}` } });
 
 export const login = async (formData) => {
   const response = await api.post('/auth/login', formData);
@@ -10,14 +12,14 @@ export const login = async (formData) => {
   return response.data;
 };
 
-export const register = async (name, email, password) => {
-  const response = await api.post('/auth/register', { name, email, password });
+export const register = async (formData) => {
+  const response = await api.post('/auth/register', formData);
 
   return response;
 };
 
-export const getProjects = async (token) => {
-  const response = await api.get('/projects', { headers: { Authorization: `Bearer ${token}` } });
+export const getProjects = async (searchName, token) => {
+  const response = await api.get(`/projects?name=${searchName}`, setHeaders(token));
 
   return response.data;
 };

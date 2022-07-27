@@ -1,0 +1,23 @@
+.project-container {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.project-card {
+  margin: 5px;
+  width: 400px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c4c4c4;
+  border: 1px solid #000;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.project-card > p {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+}
