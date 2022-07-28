@@ -19,7 +19,7 @@ const loginSchema = yup.object().shape({
   password: yup.string().required('Required Field').max(150, 'Maximum of 150 characters'),
 });
 
-const Login = () => {
+const Login = ({ loginUser }) => {
   const navigate = useNavigate();
   const {
     values, touched, errors, handleBlur, handleChange, handleSubmit, setErrors,
@@ -31,6 +31,8 @@ const Login = () => {
         const tokenResponse = await login(formData);
 
         localStorage.setItem('token', tokenResponse.token);
+
+        loginUser();
 
         navigate('/my-projects');
       } catch (error) {

@@ -19,7 +19,15 @@ export const register = async (formData) => {
 };
 
 export const getProjects = async (searchName, token) => {
-  const response = await api.get(`/projects?name=${searchName}`, setHeaders(token));
+  try {
+    const response = await api.get(`/projects?name=${searchName}`, setHeaders(token));
 
-  return response.data;
+    return response.data;
+  } catch (error) {
+    if (error.response.status === '401') {
+      localStorage.removeItem('token');
+      window.localStorage.href('/');
+    }
+    throw error;
+  }
 };
