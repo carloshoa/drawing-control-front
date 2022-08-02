@@ -7,6 +7,7 @@ import {
 import Login from './components/pages/Login/Login';
 import Register from './components/pages/Register/Register';
 import MyProjects from './components/pages/MyProjects/MyProjects';
+import ProjectDetails from './components/pages/ProjectDetails/ProjectDetails';
 
 import ProtectedRoute from './components/Miscelaneous/ProtectedRoute/ProtectedRoute';
 
@@ -32,6 +33,10 @@ const App = () => {
         <Route
           path="/my-projects"
           element={<ProtectedRoute isUserLogged={isUserLogged} Page={MyProjects} />}
+        />
+        <Route
+          path="/my-projects/:id"
+          element={<ProtectedRoute isUserLogged={isUserLogged} Page={ProjectDetails} />}
         />
       </Routes>
     </BrowserRouter>

@@ -31,3 +31,29 @@ export const getProjects = async (searchName, token) => {
     throw error;
   }
 };
+
+export const getOneProject = async (id, token) => {
+  try {
+    const response = await api.get(`/projects/${id}`, setHeaders(token));
+    return response.data;
+  } catch (error) {
+    if (error.response.status === '401') {
+      localStorage.removeItem('token');
+      window.localStorage.href('/');
+    }
+    throw error;
+  }
+};
+
+export const createProjectDrawing = async (id, body, token) => {
+  try {
+    const response = await api.post('/drawing/create', body, setHeaders(token));
+    return response.data;
+  } catch (error) {
+    if (error.response.status === '401') {
+      localStorage.removeItem('token');
+      window.localStorage.href('/');
+    }
+    throw error;
+  }
+};

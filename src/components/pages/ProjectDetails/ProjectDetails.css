@@ -1,0 +1,33 @@
+.project-container {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid red;
+}
+
+.project-card {
+  margin: 5px;
+  width: auto;
+  min-height: 200px;
+  height: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  background-color: #c4c4c4;
+  border: 1px solid #000;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.project-card > p {
+  background-color: azure;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+}
+.project-card > h2{
+  margin: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgb(10, 10, 10);
+}
