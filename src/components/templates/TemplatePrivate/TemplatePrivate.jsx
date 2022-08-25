@@ -9,7 +9,7 @@ const TemplatePrivate = ({ children }) => (
     <nav className="template-private-navbar">
       <div>
         <a
-          href="my-projects"
+          href="/my-projects"
           className="template-private-iron-project-logo"
         >
           TBT ENGENHARIA

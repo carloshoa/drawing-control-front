@@ -1,7 +1,9 @@
-.project-container {
-  margin-top: 70px;
+.project-container-1 {
+  margin: 50px;
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .project-card {

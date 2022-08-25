@@ -57,3 +57,24 @@ export const createProjectDrawing = async (id, body, token) => {
     throw error;
   }
 };
+
+export const deleteDrawing = async (body, token) => {
+  try {
+    const response = await api.post('/drawing/delete', body, setHeaders(token));
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export const updateDrawing = async (body, token) => {
+  try {
+    const response = await api.post('/drawing/update', body, setHeaders(token));
+    console.log('response da api', response);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};

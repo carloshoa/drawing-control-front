@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { Form, Col } from 'react-bootstrap';
+import { Form, Col, Card } from 'react-bootstrap';
 
 import TemplatePrivate from '../../templates/TemplatePrivate/TemplatePrivate';
 // Criar um toast
@@ -13,7 +13,7 @@ import { getProjects } from '../../../services/api';
 import './MyProjects.css';
 
 const MyProjects = () => {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
   const [projects, setProjects] = useState([]);
   const [searchName, setSearchName] = useState('');
 
@@ -23,7 +23,7 @@ const MyProjects = () => {
       const foundProjects = await getProjects(searchName, token);
       setProjects(foundProjects);
     } catch (error) {
-      setShow(true);
+      // setShow(true);
     }
   };
 
@@ -46,11 +46,23 @@ const MyProjects = () => {
         />
       </Form.Group>
 
-      <div className="project-container">
+      <div className="project-container-1">
         {projects.map((project) => (
-          <Link className="project-card" key={project._id} to={`/my-projects/${project._id}`}>
-            <p>{project.name}</p>
-          </Link>
+          <Card key={project._id} className="m-2" style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title>{project.name}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">Last Revision</Card.Subtitle>
+              <Card.Text>
+                Drawings :
+                {project.drawing}
+              </Card.Text>
+              <Link to={`/my-projects/${project._id}`}>
+                See Drawings
+              </Link>
+              {/* <Card.Link href="#">Card Link</Card.Link>
+              <Card.Link href="#">Another Link</Card.Link> */}
+            </Card.Body>
+          </Card>
         ))}
       </div>
     </TemplatePrivate>
